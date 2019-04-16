@@ -12,27 +12,23 @@ class Assignment1 {
             System.out.println(array[i]);
             }
 
-        int[] left = new int[array.length/2];
-        for (int i = 0; i < left.length; i++) {
-            System.out.println(left[i] + "This is part of the left");
+        MultiThreadedMergeSort merger = new MultiThreadedMergeSort(array, 0, array.length- 1);
+        Thread main = new Thread(merger);
+        main.start();
 
-        }
-        int[] right = new int[array.length - array.length/2];
-        Thread one = new Thread(new MultiThreadedMergeSort(left));
-        Thread two = new Thread(new MultiThreadedMergeSort(right));
 
-        one.start();
-        two.start();
         try {
-            one.join();
-            two.join();
-
-        } catch (InterruptedException ie) {
-            System.out.println("Error Joining");
-            System.out.println("Do this");
-
-
+            main.join();
+        }catch (InterruptedException exception){
+            System.out.println("Error");
         }
+
+
+
+
+
+
+
 
 
         for (int i = 0; i < array.length; i++) {
