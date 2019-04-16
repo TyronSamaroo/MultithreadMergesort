@@ -11,6 +11,13 @@ class Assignment1 {
             array[i] = (int) (Math.random() * 10000);
             System.out.println(array[i]);
             }
+            int a = 4;
+        int b;
+        for (int i = 0; i < a; i++) {
+            System.out.println("this");
+
+        }
+
 
 //            Thread worker = new Thread(new MultiThreadedMergeSort<Integer>(array));
 //            worker.start();
