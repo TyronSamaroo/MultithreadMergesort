@@ -1,17 +1,19 @@
+
+
 public class MultiThreadedMergeSort<AnyType extends Comparable<? super AnyType>> implements Runnable {
 
-    private AnyType[] v;
+    private int[] v;
     private Thread t;
 
-    public MultiThreadedMergeSort(AnyType[] v){
+    public MultiThreadedMergeSort(int[] v){
         this.v = v;
     }
 
-    public AnyType[] getV() {
+    public int[] getV() {
         return v;
     }
 
-    public void setV(AnyType[] v) {
+    public void setV(int[] v) {
         this.v = v;
     }
 
@@ -26,14 +28,26 @@ public class MultiThreadedMergeSort<AnyType extends Comparable<? super AnyType>>
 //        return list;
 //    }
 
-    public void mutiThreadMergeSort(AnyType[] array){
+    public int[] mutiThreadMergeSort(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            array[i] = 2;
 
+        }
+    return array;
     }
+
+
     @Override
     public void run() {
         System.out.println("Im a thread");
+        mutiThreadMergeSort(v);
+
 
     }
+
+
+
+
 
 
 }
